@@ -17,13 +17,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * 持久化基类
+ *
  * @author wangjun
  */
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public class BasePo implements Serializable {
 
     @Id
     @GeneratedValue(generator = "system-uuid")

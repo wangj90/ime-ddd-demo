@@ -1,7 +1,7 @@
-package pers.wangjun.domain.aggregate;
+package pers.wangjun.domain.types;
 
 import lombok.Getter;
-import lombok.Setter;
+import lombok.Value;
 import pers.wangjun.types.Measurement;
 
 import java.math.BigDecimal;
@@ -12,6 +12,7 @@ import java.math.BigDecimal;
  * @author wangjun
  */
 @Getter
+@Value
 public class ImeWorkOrderQty {
 
     /**

@@ -1,7 +1,6 @@
-package pers.wangjun.domain.aggregate;
+package pers.wangjun.domain.types;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.Value;
 
 import java.util.Date;

@@ -1,4 +1,8 @@
-package pers.wangjun.application;
+package pers.wangjun.application.service;
+
+import com.sun.media.sound.InvalidDataException;
+import pers.wangjun.application.requestdto.CreateWorkOrderRequestDto;
+import pers.wangjun.application.responsedto.CreateWorkOrderResponseDto;
 
 /**
  * 工单应用服务
@@ -12,5 +16,5 @@ public interface ImeWorkOrderApplicationService {
      *
      * @return 工单数据Id
      */
-    String create();
+    CreateWorkOrderResponseDto create(CreateWorkOrderRequestDto dto) throws InvalidDataException;
 }

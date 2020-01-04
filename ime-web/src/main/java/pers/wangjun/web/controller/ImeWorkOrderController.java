@@ -1,15 +1,19 @@
-package pers.wangjun.web;
+package pers.wangjun.web.controller;
 
+import com.sun.media.sound.InvalidDataException;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pers.wangjun.application.ImeWorkOrderApplicationService;
-import pers.wangjun.domain.types.ImeWorkOrderStatus;
+import pers.wangjun.application.requestdto.CreateWorkOrderRequestDto;
+import pers.wangjun.application.responsedto.CreateWorkOrderResponseDto;
+import pers.wangjun.application.service.ImeWorkOrderApplicationService;
 
-import java.math.BigDecimal;
-import java.util.Date;
+import javax.validation.Valid;
 
 /**
+ * 工单Controller
+ *
  * @author wangjun
  */
 @RestController
@@ -23,8 +27,7 @@ public class ImeWorkOrderController {
     }
 
     @PutMapping
-    public String create() {
-        return imeWorkOrderApplicationService.create(String code, Date imeWorkOrderPlanBeginTime, Date imeWorkOrderPlanEndTime, BigDecimal qty, ImeWorkOrderStatus imeWorkOrderStatus;)
-        ;
+    public CreateWorkOrderResponseDto create(@RequestBody @Valid CreateWorkOrderRequestDto dto) throws InvalidDataException {
+        return imeWorkOrderApplicationService.create(dto);
     }
 }

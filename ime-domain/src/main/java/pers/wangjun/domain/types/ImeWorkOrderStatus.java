@@ -1,4 +1,4 @@
-package pers.wangjun.domain.aggregate;
+package pers.wangjun.domain.types;
 
 /**
  * 工单状态

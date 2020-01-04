@@ -9,5 +9,4 @@ public class ImeStartApplication {
     public static void main(String[] args) {
         SpringApplication.run(ImeStartApplication.class, args);
     }
-
 }

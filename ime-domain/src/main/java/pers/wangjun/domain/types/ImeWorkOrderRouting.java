@@ -1,7 +1,7 @@
-package pers.wangjun.domain.aggregate;
+package pers.wangjun.domain.types;
 
 import lombok.Getter;
-import lombok.Setter;
+import lombok.Value;
 
 /**
  * 工单工艺路线
@@ -9,5 +9,6 @@ import lombok.Setter;
  * @author wangjun
  */
 @Getter
+@Value
 public class ImeWorkOrderRouting {
 }
