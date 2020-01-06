@@ -1,7 +1,7 @@
 package pers.wangjun.web.controller;
 
 import com.sun.media.sound.InvalidDataException;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +26,7 @@ public class ImeWorkOrderController {
         this.imeWorkOrderApplicationService = imeWorkOrderApplicationService;
     }
 
-    @PutMapping
+    @PostMapping
     public CreateWorkOrderResponseDto create(@RequestBody @Valid CreateWorkOrderRequestDto dto) throws InvalidDataException {
         return imeWorkOrderApplicationService.create(dto);
     }
