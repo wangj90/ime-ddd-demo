@@ -13,7 +13,6 @@ import pers.wangjun.persistence.ImeWorkOrderPo;
  *
  * @author wangjun
  */
-@Repository
 public class ImeWorkOrderRepositoryImpl implements ImeWorkOrderRepository {
 
     private ImeWorkOrderJpaRepository imeWorkOrderJpaRepository;
