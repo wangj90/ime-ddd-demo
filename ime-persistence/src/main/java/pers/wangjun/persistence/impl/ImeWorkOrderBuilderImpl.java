@@ -1,6 +1,5 @@
 package pers.wangjun.persistence.impl;
 
-import org.springframework.stereotype.Component;
 import pers.wangjun.domain.aggregate.ImeWorkOrder;
 import pers.wangjun.domain.types.*;
 import pers.wangjun.persistence.ImeWorkOrderBuilder;
@@ -12,7 +11,6 @@ import pers.wangjun.types.Measurement;
  *
  * @author wangjun
  */
-@Component
 public class ImeWorkOrderBuilderImpl implements ImeWorkOrderBuilder {
 
     public ImeWorkOrder toWorkOrder(ImeWorkOrderPo imeWorkOrderPo) {
