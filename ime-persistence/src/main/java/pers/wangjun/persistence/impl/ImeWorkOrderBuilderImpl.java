@@ -13,16 +13,18 @@ import pers.wangjun.types.Measurement;
  */
 public class ImeWorkOrderBuilderImpl implements ImeWorkOrderBuilder {
 
+    @Override
     public ImeWorkOrder toWorkOrder(ImeWorkOrderPo imeWorkOrderPo) {
         if (imeWorkOrderPo == null) {
             return null;
         }
-        return ImeWorkOrder.create(new ImeWorkOrderId(imeWorkOrderPo.getCode()),
+        return new ImeWorkOrder(new ImeWorkOrderId(imeWorkOrderPo.getCode()),
                 new ImeWorkOrderProduct(new ImeWorkOrderBom(), new ImeWorkOrderRouting()),
                 new ImeWorkOrderQty(imeWorkOrderPo.getQty(), new Measurement()),
                 new ImeWorkOrderPlanTime(imeWorkOrderPo.getImeWorkOrderPlanBeginTime(), imeWorkOrderPo.getImeWorkOrderPlanEndTime()));
     }
 
+    @Override
     public ImeWorkOrderPo fromWorkOrder(ImeWorkOrder imeWorkOrder) {
         ImeWorkOrderPo imeWorkOrderPo = new ImeWorkOrderPo();
         imeWorkOrderPo.setCode(imeWorkOrder.getImeWorkOrderId().getCode());

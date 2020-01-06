@@ -2,7 +2,6 @@ package pers.wangjun.domain.aggregate;
 
 import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pers.wangjun.domain.types.*;
 
@@ -13,7 +12,6 @@ import pers.wangjun.domain.types.*;
  */
 @Getter
 @Setter(value = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ImeWorkOrder {
 
     /**
@@ -41,14 +39,12 @@ public class ImeWorkOrder {
      */
     private ImeWorkOrderStatus imeWorkOrderStatus;
 
-    public static ImeWorkOrder create(ImeWorkOrderId imeWorkOrderId, ImeWorkOrderProduct imeWorkOrderProduct,
-                                      ImeWorkOrderQty imeWorkOrderQty, ImeWorkOrderPlanTime imeWorkOrderPlanTime) {
-        ImeWorkOrder imeWorkOrder = new ImeWorkOrder();
-        imeWorkOrder.setImeWorkOrderId(imeWorkOrderId);
-        imeWorkOrder.setImeWorkOrderPlanTime(imeWorkOrderPlanTime);
-        imeWorkOrder.setImeWorkOrderProduct(imeWorkOrderProduct);
-        imeWorkOrder.setImeWorkOrderQty(imeWorkOrderQty);
-        imeWorkOrder.setImeWorkOrderStatus(ImeWorkOrderStatus.Created);
-        return imeWorkOrder;
+    public ImeWorkOrder(ImeWorkOrderId imeWorkOrderId, ImeWorkOrderProduct imeWorkOrderProduct,
+                        ImeWorkOrderQty imeWorkOrderQty, ImeWorkOrderPlanTime imeWorkOrderPlanTime) {
+        this.setImeWorkOrderId(imeWorkOrderId);
+        this.setImeWorkOrderPlanTime(imeWorkOrderPlanTime);
+        this.setImeWorkOrderProduct(imeWorkOrderProduct);
+        this.setImeWorkOrderQty(imeWorkOrderQty);
+        this.setImeWorkOrderStatus(ImeWorkOrderStatus.Created);
     }
 }

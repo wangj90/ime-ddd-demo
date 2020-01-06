@@ -22,6 +22,7 @@ public class CreateWorkOrderDomainServiceImpl implements CreateWorkOrderDomainSe
         this.imeWorkOrderRepository = imeWorkOrderRepository;
     }
 
+    @Override
     public String create(ImeWorkOrderId imeWorkOrderId, ImeWorkOrderProduct imeWorkOrderProduct,
                          ImeWorkOrderQty imeWorkOrderQty, ImeWorkOrderPlanTime imeWorkOrderPlanTime)
             throws InvalidDataException {
@@ -29,7 +30,7 @@ public class CreateWorkOrderDomainServiceImpl implements CreateWorkOrderDomainSe
         if (imeWorkOrder != null) {
             throw new InvalidDataException("相同编码[" + imeWorkOrderId.getCode() + "]的工单已存在");
         }
-        ImeWorkOrder newWorkOrder = ImeWorkOrder.create(imeWorkOrderId, imeWorkOrderProduct,
+        ImeWorkOrder newWorkOrder = new ImeWorkOrder(imeWorkOrderId, imeWorkOrderProduct,
                 imeWorkOrderQty, imeWorkOrderPlanTime);
         return imeWorkOrderRepository.save(newWorkOrder);
     }
